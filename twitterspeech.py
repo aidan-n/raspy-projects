@@ -32,7 +32,6 @@ def say_stream(query = "obama"):
 def read_tweet(tweet):
     text = unicodedata.normalize('NFKD', tweet["text"]).encode('ascii','ignore')
     print text
-    text = text.replace("#", "hashtag ")
     text = re.sub('#', "hashtag ", text) # to replace # with hashtag
     text = re.sub(r"(RT)|@\S+|http\S*", "", text) # Skip these
     text = re.sub(r"([A-Z][a-z]+)(?=[A-Z])", r"\1 ", text) # Turns camel case into separated words
